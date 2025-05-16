@@ -3,7 +3,6 @@ package module
 
 import (
 	"errors"
-	"fmt"
 	"testing"
 )
 
@@ -15,22 +14,11 @@ func TestValidate(t *testing.T) {
 	}{
 		{"Idade_Maior_de_18", 36, nil},
 		{"Idade_negativa", -14, errors.New("the age is not valid")},
-		//{"Idade_Maior_de_18", 36, ""},
-		//{"Idade_negativa", -14, "the age is not valid"},
 	} {
 		t.Run(testName(i, tc.name), func(t *testing.T) {
 			var age Age
 			age.Age = tc.value
-
-			err := age.Validate()
-
-			if err != nil {
-				fmt.Printf("O endereço de err é: %p\n", &err)
-				fmt.Printf("O endereço de tc.expected é: %p\n", &tc.expected)
-
-			}
-
-			assertEqual(t, tc.expected, err)
+			assertEqual(t, tc.expected, age.Validate())
 		})
 	}
 }
