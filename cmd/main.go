@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"primitive-obsession/src/module"
+	"primitive-obsession/internal/src/module"
 )
 
 func main() {
