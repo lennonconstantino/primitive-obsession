@@ -14,6 +14,7 @@ type Cpf struct {
 	Cpf string
 }
 
+// ValidationCpf performs validations regarding the business rule from cpf
 func (cpf *Cpf) ValidationCpf() error {
 	if !cpf.isCPF(cpf.Cpf) {
 		return fmt.Errorf("%s: %w", "document cpf is not valid!", nil)

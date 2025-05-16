@@ -8,6 +8,7 @@ type Email struct {
 	Email string
 }
 
+// Validation performs validations regarding the email
 func (email *Email) Validation() error {
 
 	if _, erro := mail.ParseAddress(email.Email); erro != nil {
