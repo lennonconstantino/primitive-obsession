@@ -26,6 +26,8 @@ Qual foi a motivação?
 8. Nenhuma classe com mais de duas variáveis de instância
 9. Não use Getters ou Setters
 
+----
+
 para iniciar um projeto vazio
 
 $ go mod init (nome-da-pasta-do-projeto)
