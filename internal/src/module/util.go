@@ -2,7 +2,6 @@ package module
 
 import (
 	"bytes"
-	"fmt"
 	"unicode"
 )
 
@@ -21,8 +20,4 @@ func cleanNonDigits(doc *string) {
 	}
 
 	*doc = buf.String()
-}
-
-func testName(i int, name string) string {
-	return fmt.Sprintf("%d_%s", i, name)
 }

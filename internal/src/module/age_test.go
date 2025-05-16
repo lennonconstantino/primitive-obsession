@@ -3,39 +3,34 @@ package module
 
 import (
 	"errors"
-	"io"
-	"os"
+	"fmt"
 	"testing"
 )
 
 func TestValidate(t *testing.T) {
-	testCases := []struct {
+	for i, tc := range []struct {
 		name     string
 		value    int
 		expected error
 	}{
-		{"positive numbers", 36, nil},
-		{"negative numbers", -14, errors.New("the age is not valid")},
-	}
-
-	i := 0
-	for _, tc := range testCases {
+		{"Idade_Maior_de_18", 36, nil},
+		{"Idade_negativa", -14, errors.New("the age is not valid")},
+		//{"Idade_Maior_de_18", 36, ""},
+		//{"Idade_negativa", -14, "the age is not valid"},
+	} {
 		t.Run(testName(i, tc.name), func(t *testing.T) {
 			var age Age
 			age.Age = tc.value
 
-			r, w, _ := os.Pipe()
-			os.Stdout = w
+			err := age.Validate()
 
-			age.Validate()
+			if err != nil {
+				fmt.Printf("O endereço de err é: %p\n", &err)
+				fmt.Printf("O endereço de tc.expected é: %p\n", &tc.expected)
 
-			capturedOutput, _ := io.ReadAll(r)
-
-			expectedOutput := "\n"
-			if string(capturedOutput) != expectedOutput {
-				t.Errorf("Expected output '%s', but got '%s'", expectedOutput, string(capturedOutput))
 			}
+
+			assertEqual(t, tc.expected, err)
 		})
-		i++
 	}
 }
