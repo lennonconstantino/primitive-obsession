@@ -1,12 +1,13 @@
-# primitive-obsession
+# Primitive-obsession
 
-# descrição
+
+## descrição
 O que o app faz?
-    O app serve como apoio para validar que não é uma boa ideia trabalhar com tipos primitivos em propriedades que requer validações.
+  O app serve como apoio para validar que não é uma boa ideia trabalhar com tipos primitivos em propriedades que requer validações.
 Com o que é construído?
-    Para esse estudo, escolhemos a linguagem Golang
+  Para esse estudo, escolhemos a linguagem Golang
 Qual foi a motivação?
-    A ideia aqui é abordar o conceito explorado pelo Martin Flower que visa trabalhar tipos alto nível ao invés de tipos comuns para representar atributos.
+  A ideia aqui é abordar o conceito explorado pelo Martin Flower que visa trabalhar tipos alto nível ao invés de tipos comuns para representar atributos.
 
 ## Object Calisthenics (9 regras)
 1. Apenas um nível de identação
@@ -26,14 +27,28 @@ Qual foi a motivação?
 8. Nenhuma classe com mais de duas variáveis de instância
 9. Não use Getters ou Setters
 
-----
-
+## Iniciar um projeto
 para iniciar um projeto vazio
 
+```bash
 $ go mod init (nome-da-pasta-do-projeto)
+```
 
 para executar o projeto sem compilar
 
+```bash
 $ go run main.go
+```
 
+para compilar um projeto
+```bash
 go build
+```
+
+
+## Testes
+Para iniciar os testes, vá ate o diretorio onde estao os modulos e execute
+
+```bash
+$ go test -v
+```
