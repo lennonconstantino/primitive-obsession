@@ -10,7 +10,7 @@ func main() {
 
 	// Client Code
 	var email module.Email
-	email.Email = ""
+	email.Email = "lennon@email.com"
 	var cpf module.Cpf
 	cpf.Cpf = "123.456.789-09"
 	var age module.Age
