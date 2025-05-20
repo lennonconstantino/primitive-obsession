@@ -5,6 +5,18 @@ import (
 	"testing"
 )
 
+func testName(i int, name string) string {
+	return fmt.Sprintf("%d_%s", i, name)
+}
+
+func decisionAssert(t *testing.T, expected, actual interface{}) {
+	t.Fatalf(`    
+Not equal!
+expected: %v
+actual:   %v
+`, expected, actual)
+}
+
 func assertEqual(t *testing.T, expected, actual interface{}) {
 	switch v := actual.(type) {
 	default:
@@ -18,16 +30,4 @@ func assertEqual(t *testing.T, expected, actual interface{}) {
 		}
 		return
 	}
-}
-
-func decisionAssert(t *testing.T, expected, actual interface{}) {
-	t.Fatalf(`    
-Not equal!
-expected: %v
-actual:   %v
-`, expected, actual)
-}
-
-func testName(i int, name string) string {
-	return fmt.Sprintf("%d_%s", i, name)
 }

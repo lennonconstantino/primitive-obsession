@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-func TestValidate(t *testing.T) {
+func TestValidateAge(t *testing.T) {
 	for i, tc := range []struct {
 		name     string
 		value    int
@@ -18,7 +18,7 @@ func TestValidate(t *testing.T) {
 		t.Run(testName(i, tc.name), func(t *testing.T) {
 			var age Age
 			age.Age = tc.value
-			assertEqual(t, tc.expected, age.Validate())
+			assertEqual(t, tc.expected, age.Validation())
 		})
 	}
 }

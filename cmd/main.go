@@ -10,7 +10,7 @@ func main() {
 
 	// Client Code
 	var email module.Email
-	email.Email = "lennon@email.com"
+	email.Email = ""
 	var cpf module.Cpf
 	cpf.Cpf = "123.456.789-09"
 	var age module.Age
@@ -21,12 +21,12 @@ func main() {
 		return
 	}
 
-	if erro := cpf.ValidationCpf(); erro != nil {
+	if erro := cpf.Validation(); erro != nil {
 		fmt.Println("Error domain. ->", erro)
 		return
 	}
 
-	if erro := age.Validate(); erro != nil {
+	if erro := age.Validation(); erro != nil {
 		fmt.Println("Error domain. ->", erro)
 		return
 	}
